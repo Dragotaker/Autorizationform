@@ -1,39 +1,31 @@
-<?php
-session_start();
-
-if ($_SESSION['user']) {
-    header('Location: sign_in.php');
-}
-
-?>
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Авторизация и регистрация</title>
-    <link rel="stylesheet" href="assets\css\main.css">
+    <title>Главная страница</title>
+    <style>
+
+
+        .save_user-button, .login-button {
+            background-color: #808080;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            width: 30%; /* Добавьте это для уменьшения ширины кнопок */
+        }
+
+        .register-button:hover, .login-button:hover {
+            background-color: #A9A9A9;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Форма авторизации -->
 
-    <form action="vendor/check_user.php" method="post">
-        <label>Логин</label>
-        <input type="text" name="login" placeholder="Введите свой логин">
-        <label>Пароль</label>
-        <input type="password" name="password" placeholder="Введите пароль">
-        <button type="submit">Войти</button>
-        <p>
-            У вас нет аккаунта? - <a href="/save_user.php">зарегистрируйтесь</a>!
-        </p>
-        <?php
-            if ($_SESSION['message']) {
-                echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
-            }
-            unset($_SESSION['message']);
-        ?>
-    </form>
+  <a href="save_user.php" class="save_user-button">Зарегистрироваться</a>
+  <a href="login.php" class="login-button">Войти</a>
 
 </body>
 </html>

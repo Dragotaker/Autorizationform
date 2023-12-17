@@ -29,7 +29,7 @@
         <input type="password" name="password_confirm" placeholder="Подтвердите пароль">
         <button type="submit">Зарегистрироваться</button>
         <p>
-            у вас уже есть аккаунт- <a href="index.php">авторизуйтесь</a>!
+            у вас уже есть аккаунт- <a href="login.php">авторизуйтесь</a>!
         </p>
 
         <?php
